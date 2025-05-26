@@ -1,3 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800 bg-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-md hover:bg-secondary transition-colors duration-300;
+  }
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-2 rounded-md hover:bg-primary hover:text-white transition-colors duration-300;
+  }
+  .section {
+    @apply py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-primary mb-8 text-center;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
