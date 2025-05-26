@@ -46,7 +46,7 @@ const ClientTestimonials = () => {
         clearInterval(intervalRef.current);
       }
     };
-  }, []);
+  }, [nextTestimonial]); // Add nextTestimonial as a dependency
 
   // Reset the interval when user manually changes testimonial
   const resetInterval = () => {
