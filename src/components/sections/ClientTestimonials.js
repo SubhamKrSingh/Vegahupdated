@@ -33,31 +33,7 @@ const ClientTestimonials = () => {
     },
   ];
 
-  // Autoplay functionality
-  useEffect(() => {
-    // Start the autoplay interval
-    intervalRef.current = setInterval(() => {
-      nextTestimonial();
-    }, 5000); // Change testimonial every 5 seconds
-
-    // Clear the interval when component unmounts
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [nextTestimonial]); // Add nextTestimonial as a dependency
-
-  // Reset the interval when user manually changes testimonial
-  const resetInterval = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = setInterval(() => {
-        nextTestimonial();
-      }, 5000);
-    }
-  };
-
+  // Define nextTestimonial before using it in useEffect
   const nextTestimonial = () => {
     setActiveIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
     resetInterval();
@@ -72,6 +48,31 @@ const ClientTestimonials = () => {
     setActiveIndex(index);
     resetInterval();
   };
+
+  // Reset the interval when user manually changes testimonial
+  const resetInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = setInterval(() => {
+        nextTestimonial();
+      }, 5000);
+    }
+  };
+
+  // Autoplay functionality
+  useEffect(() => {
+    // Start the autoplay interval
+    intervalRef.current = setInterval(() => {
+      nextTestimonial();
+    }, 5000); // Change testimonial every 5 seconds
+
+    // Clear the interval when component unmounts
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, []); // Keep empty dependency array to run only once
 
   return (
     <section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50">

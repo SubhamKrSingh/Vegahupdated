@@ -50,24 +50,7 @@ function TransformationProcess() {
   };
   
   // Remove the unused itemVariants and numberVariants declarations
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' }
-    }
-  };
-  
-  const numberVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1, 
-      opacity: 1,
-      transition: { duration: 0.4, type: 'spring', stiffness: 200 }
-    }
-  };
-  
+
   const steps = [
     {
       id: 1,
