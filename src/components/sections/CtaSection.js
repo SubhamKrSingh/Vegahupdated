@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiAward, FiZap, FiPhone, FiMail, FiSend, FiCheckCircle, FiLoader } from 'react-icons/fi';
+import { FiAward, FiZap, FiPhone, FiMail, FiCheckCircle, FiLoader } from 'react-icons/fi';
 
 const CtaSection = () => {
   const [formData, setFormData] = useState({
